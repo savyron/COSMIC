@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cosmic | سفر در منظومه شمسی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070a1c;--bg2:#10163a;--tx:#e9ecff;--mu:#9aa3d6;--ac:#ffb454;--ln:#242c63;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#eef0ff;--bg2:#fff;--tx:#12183f;--mu:#555d8f;--ac:#c26a00;--ln:#cfd4f5}}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:radial-gradient(900px 500px at 85% 0,rgba(120,80,255,.16),transparent 60%),radial-gradient(800px 500px at 0 40%,rgba(255,150,60,.07),transparent 60%),var(--bg);color:var(--tx);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.95}
+a{color:inherit;text-decoration:none}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;border-bottom:1px solid var(--ln)}
+header b{font-size:1.3rem;font-weight:800;color:var(--ac);letter-spacing:.05em}
+.btn,header a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;border:1px solid var(--ac);border-radius:999px;color:var(--ac);font-size:.9rem;font-weight:500;line-height:1.4;white-space:nowrap;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:background .25s,color .25s,transform .15s}.btn:active,header a:active{transform:scale(.96)}.btn:hover,header a:hover,.btn:focus-visible{background:var(--ac);color:#10163a}
+main{max-width:1100px;margin:0 auto;padding:0 5vw 60px}
+#stage{overflow:hidden;height:min(72vh,600px);margin:0 -5vw;position:relative;background:radial-gradient(ellipse at 50% 55%,#141c4a 0%,#080b24 55%,#03040e 100%);border-bottom:1px solid var(--ln)}
+#stage canvas{width:100%;height:100%;display:block;pointer-events:none}
+#stage .t{color:#9aa3d6;position:absolute;right:5vw;bottom:18px;color:var(--mu);font-size:.8rem}
+h1{font-size:clamp(2rem,5vw,3.2rem);margin:30px 0 8px;font-weight:800;line-height:1.4}
+h2{font-size:1.5rem;margin:44px 0 12px;font-weight:800}
+p.lead{color:var(--mu);max-width:60ch;margin:0}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.fact{background:var(--bg2);border:1px solid var(--ln);border-radius:12px;padding:16px 18px}
+.fact b{display:block;color:var(--ac);margin-bottom:2px}
+.fact span{color:var(--mu);font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+.pc{background:var(--bg2);border:1px solid var(--ln);border-radius:14px;padding:18px;text-align:center;transition:border-color .25s,transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.pc:hover,.pc:focus-visible{border-color:var(--ac);transform:translateY(-3px);outline:none;box-shadow:0 10px 36px var(--g,rgba(255,180,84,.2))}
+.orb{width:96px;height:96px;border-radius:50%;margin:0 auto 8px;box-shadow:inset -14px -10px 22px rgba(0,0,0,.55)}
+.pc small{color:var(--mu);display:block;direction:ltr}
+.detail{display:grid;grid-template-columns:300px 1fr;gap:40px;padding:40px 0;align-items:start}
+.big{width:260px;height:260px;border-radius:50%;margin:20px auto;position:relative;box-shadow:inset -50px -30px 70px rgba(0,0,0,.65),0 0 60px var(--g);background-size:200% 100%;animation:spin 40s linear infinite}
+.ring{position:absolute;left:-40%;right:-40%;top:38%;height:24%;border:10px solid rgba(220,200,150,.55);border-radius:50%;transform:rotate(-15deg)}
+@keyframes spin{to{background-position:200% 0}}
+table{width:100%;border-collapse:collapse;margin:14px 0}
+td{padding:9px 0;border-bottom:1px solid var(--ln)}
+td:first-child{color:var(--mu);width:42%}
+ul{padding-right:20px}li{margin-bottom:6px}
+.nav{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:28px}.nav .btn{flex:1;text-align:center;min-width:90px}
+
+.lab{position:absolute;left:0;top:0;will-change:transform;font-size:.72rem;color:#fff;opacity:.85;white-space:nowrap;text-shadow:0 0 6px #000,0 0 3px #000;padding:2px 6px}a.lab:hover{color:var(--ac);opacity:1}.b3{width:min(300px,80vw);height:min(300px,80vw);margin:10px auto;border-radius:24px;background:radial-gradient(circle at 50% 50%,#141c4a,#03040e 85%);box-shadow:0 0 70px var(--g,transparent)}.b3 canvas{width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
+footer{border-top:1px solid var(--ln);padding:20px 5vw;color:var(--mu);font-size:.8rem;text-align:center}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+@media(max-width:760px){.detail{grid-template-columns:1fr}#stage{height:64vh;min-height:430px}.lab{font-size:.68rem;padding:8px 10px}}
+h2{display:flex;align-items:center;gap:14px}h2::after{content:"";flex:1;height:1px;background:linear-gradient(to left,var(--ln),transparent)}
+#home h1{background:linear-gradient(90deg,#ffb454,#ff7ab8,#8f9bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0}.stats div{background:var(--bg2);border:1px solid var(--ln);border-radius:12px;padding:10px 14px}.stats b{display:block;font-size:1.2rem;color:var(--ac);font-weight:800}.stats small{color:var(--mu)}
+.sz{display:grid;grid-template-columns:70px 1fr 90px;gap:12px;align-items:center;margin:8px 0}.sz small{color:var(--mu);direction:ltr;text-align:right}.sz i{display:block;height:16px;border-radius:8px;width:0;transition:width 1.3s cubic-bezier(.2,.8,.2,1)}.sz.in i{width:var(--w)}
+.calc label{color:var(--mu)}.calc input{width:110px;margin:0 8px;padding:8px 12px;border-radius:10px;border:1px solid var(--ln);background:var(--bg2);color:var(--tx);font:inherit}.calc input:focus{outline:2px solid var(--ac)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@keyframes fi{from{opacity:0}to{opacity:1}}.fade{animation:fi .4s ease both}
+@media(prefers-reduced-motion:reduce){.big,.fade{animation:none}.rv{opacity:1;transform:none;transition:none}.sz i{transition:none}.pc,.btn{transition:none}}
+</style>
+</head>
+<body>
+<header><b>COSMIC</b><a href="#home">همه سیاره‌ها</a></header>
+<main>
+<div id="home">
+<div id="stage"><span class="t">روی اسم هر سیاره بزن</span></div>
+<h1>منظومه شمسی، از خورشید تا نپتون</h1>
+<p class="lead">یک مدل سه‌بعدی زنده از هشت سیاره به‌همراه اطلاعاتی که احتمالاً نمی‌دانستی. روی هر سیاره بزن تا صفحه کاملش باز شود.</p>
+<h2>سیاره‌ها</h2><div class="grid" id="grid"></div>
+<h2>می‌دانستی؟ درباره منظومه شمسی</h2><div class="facts" id="facts"></div>
+</div>
+<div id="page" hidden></div>
+</main>
+<footer>ساخته شده توسط <a href="https://savyron.github.io/savyron/" target="_blank" rel="noopener" style="color:#a855f7;text-decoration:underline;text-underline-offset:4px;font-weight:500">Savyron</a></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+var P=[
+{id:"mercury",fa:"عطارد",en:"Mercury",c:"#a8a29a",r:1,t:"سنگی",d:"۴٬۸۷۹ کیلومتر",a:"۵۷٫۹ میلیون کیلومتر",day:"۵۹ روز زمینی (چرخش)",yr:"۸۸ روز زمینی",m:"۰",tp:"از ‎−۱۸۰ تا ۴۳۰ درجه سانتی‌گراد",g:"۳٫۷ m/s²",
+ f:["کوچک‌ترین سیاره و نزدیک‌ترین به خورشید است، ولی گرم‌ترین نیست؛ بدون جو، گرما را نگه نمی‌دارد.","یک سال عطارد (۸۸ روز) کوتاه‌تر از یک روز خورشیدی آن (حدود ۱۷۶ روز زمینی) است.","سطحش پر از دهانه برخورد است و در قطب‌هایش یخ آب در دهانه‌های همیشه‌تاریک پیدا شده."]},
+{id:"venus",fa:"ناهید (زهره)",en:"Venus",c:"#e6b86a",r:1.8,t:"سنگی",d:"۱۲٬۱۰۴ کیلومتر",a:"۱۰۸٫۲ میلیون کیلومتر",day:"۲۴۳ روز زمینی (چرخش)",yr:"۲۲۵ روز زمینی",m:"۰",tp:"حدود ۴۶۵ درجه سانتی‌گراد",g:"۸٫۹ m/s²",
+ f:["داغ‌ترین سیاره منظومه است؛ جو غلیظ دی‌اکسید کربن مثل یک اثر گلخانه‌ای شدید عمل می‌کند.","برخلاف بیشتر سیاره‌ها، وارونه می‌چرخد؛ در ناهید خورشید از غرب طلوع می‌کند.","فشار هوا در سطحش حدود ۹۰ برابر زمین است، معادل عمق ۹۰۰ متری زیر دریا."]},
+{id:"earth",fa:"زمین",en:"Earth",c:"#3b82d6",r:2,t:"سنگی",d:"۱۲٬۷۴۲ کیلومتر",a:"۱۴۹٫۶ میلیون کیلومتر",day:"۲۴ ساعت",yr:"۳۶۵٫۲۵ روز",m:"۱ (ماه)",tp:"میانگین حدود ۱۵ درجه سانتی‌گراد",g:"۹٫۸ m/s²",
+ f:["تنها جایی که تا امروز می‌دانیم حیات دارد؛ حدود ۷۱٪ سطحش را آب پوشانده است.","میدان مغناطیسی زمین ما را از باد خورشیدی محافظت می‌کند و شفق قطبی از همین‌جا می‌آید.","ماه هر سال حدود ۳٫۸ سانتی‌متر از زمین دورتر می‌شود."]},
+{id:"mars",fa:"مریخ",en:"Mars",c:"#c4552f",r:1.4,t:"سنگی",d:"۶٬۷۷۹ کیلومتر",a:"۲۲۷٫۹ میلیون کیلومتر",day:"۲۴ ساعت و ۳۷ دقیقه",yr:"۶۸۷ روز زمینی",m:"۲ (فوبوس و دیموس)",tp:"میانگین حدود ‎−۶۵ درجه سانتی‌گراد",g:"۳٫۷ m/s²",
+ f:["بلندترین کوه منظومه، المپوس مونز، روی مریخ است با ارتفاع حدود ۲۲ کیلومتر.","رنگ سرخش از اکسید آهن (زنگ) در خاکش می‌آید.","شواهد رودخانه‌ها و دریاچه‌های باستانی پیدا شده و کاوشگرهای ناسا به دنبال نشانه‌های حیات قدیمی‌اند."]},
+{id:"jupiter",fa:"مشتری",en:"Jupiter",c:"#d8a878",r:5,t:"غول گازی",d:"۱۳۹٬۸۲۰ کیلومتر",a:"۷۷۸٫۵ میلیون کیلومتر",day:"حدود ۱۰ ساعت",yr:"حدود ۱۱٫۹ سال زمینی",m:"بیش از ۹۰",tp:"حدود ‎−۱۱۰ درجه (بالای ابرها)",g:"۲۴٫۸ m/s²",
+ f:["بزرگ‌ترین سیاره است؛ بیش از ۱۳۰۰ زمین در حجمش جا می‌شود.","لکه سرخ بزرگ طوفانی است که دست‌کم ۳۰۰ سال است ادامه دارد.","قمر گانیمد بزرگ‌ترین قمر منظومه است و از عطارد هم بزرگ‌تر."]},
+{id:"saturn",fa:"کیوان (زحل)",en:"Saturn",c:"#e3cf9c",r:4.4,t:"غول گازی",d:"۱۱۶٬۴۶۰ کیلومتر",a:"۱٫۴۳ میلیارد کیلومتر",day:"حدود ۱۰ ساعت و ۳۳ دقیقه",yr:"حدود ۲۹٫۴ سال زمینی",m:"بیش از ۱۴۰",tp:"حدود ‎−۱۴۰ درجه سانتی‌گراد",g:"۱۰٫۴ m/s²",ring:1,
+ f:["چگالی‌اش از آب کمتر است؛ اگر وان آبی به اندازه کافی بزرگ بود، شناور می‌شد.","حلقه‌هایش بیشتر از یخ ساخته شده و پهنایشان صدها هزار کیلومتر، اما ضخامتشان گاهی فقط چند ده متر است.","قمر تیتان جو غلیظ و دریاچه‌هایی از متان مایع دارد."]},
+{id:"uranus",fa:"اورانوس",en:"Uranus",c:"#8fdbe0",r:3,t:"غول یخی",d:"۵۰٬۷۲۴ کیلومتر",a:"۲٫۸۷ میلیارد کیلومتر",day:"حدود ۱۷ ساعت و ۱۴ دقیقه",yr:"حدود ۸۴ سال زمینی",m:"۲۸",tp:"حدود ‎−۱۹۵ درجه سانتی‌گراد",g:"۸٫۷ m/s²",
+ f:["حدود ۹۸ درجه کج شده و عملاً به پهلو می‌غلتد؛ فصل‌هایش هر کدام حدود ۲۱ سال طول می‌کشد.","اولین سیاره‌ای است که با تلسکوپ کشف شد (ویلیام هرشل، ۱۷۸۱).","رنگ آبی‌سبزش از متان در جو آن است."]},
+{id:"neptune",fa:"نپتون",en:"Neptune",c:"#3a5fcd",r:3,t:"غول یخی",d:"۴۹٬۲۴۴ کیلومتر",a:"۴٫۵ میلیارد کیلومتر",day:"حدود ۱۶ ساعت و ۶ دقیقه",yr:"حدود ۱۶۴٫۸ سال زمینی",m:"۱۶",tp:"حدود ‎−۲۰۰ درجه سانتی‌گراد",g:"۱۱٫۲ m/s²",
+ f:["سریع‌ترین بادهای منظومه را دارد، تا حدود ۲٬۰۰۰ کیلومتر در ساعت.","با محاسبات ریاضی پیش از دیده شدن پیش‌بینی شد و در ۱۸۴۶ کشف شد.","از زمان کشفش هنوز یک دور کامل دور خورشید نزده است (۱۶۴٫۸ سال)."]}
+];
+var F=[["خورشید","۹۹٫۸۶٪ از جرم کل منظومه شمسی را دارد و بیش از یک میلیون زمین در حجمش جا می‌شود."],["نور خورشید","حدود ۸ دقیقه و ۲۰ ثانیه طول می‌کشد تا به زمین برسد."],["سن منظومه","حدود ۴٫۶ میلیارد سال از شکل‌گیری آن می‌گذرد."],["کمربند سیارک‌ها","بین مریخ و مشتری قرار دارد؛ جرم کل آن حتی از جرم ماه هم کمتر است."],["پلوتون","از ۲۰۰۶ «سیاره کوتوله» نامیده می‌شود و در کمربند کویپر است."],["ویجر ۱","دورترین ساخته دست انسان است و بیش از ۲۴ میلیارد کیلومتر از زمین فاصله دارد."],["ابر اورت","پوسته‌ای از اجرام یخی که احتمالاً تا حدود یک سال نوری از خورشید گسترده است."],["دنباله‌دارها","گلوله‌های یخ و غبارند؛ وقتی به خورشید نزدیک می‌شوند دم درخشانشان ساخته می‌شود."],["روز و سال","کوتاه‌ترین سال را عطارد و بلندترین را نپتون دارد."]];
+var X=[
+{dk:4879,g:.38,au:.39,lt:"حدود ۳ دقیقه",at:"تقریباً بدون جو (لایه‌ای بسیار رقیق)",ds:"از دوران باستان شناخته شده بود",mi:"مارینر ۱۰، مسنجر، بپی‌کلمبو"},
+{dk:12104,g:.9,au:.72,lt:"حدود ۶ دقیقه",at:"۹۶٪ دی‌اکسید کربن و ابرهای اسید سولفوریک",ds:"از دوران باستان؛ درخشان‌ترین سیاره آسمان",mi:"ونرا ۷ (اولین فرود موفق، ۱۹۷۰)، مجلان، آکاتسوکی"},
+{dk:12742,g:1,au:1,lt:"۸ دقیقه و ۲۰ ثانیه",at:"۷۸٪ نیتروژن و ۲۱٪ اکسیژن",ds:"خانه ماست",mi:"هزاران ماهواره و ایستگاه فضایی بین‌المللی"},
+{dk:6779,g:.38,au:1.52,lt:"حدود ۱۲ دقیقه و ۴۰ ثانیه",at:"۹۵٪ دی‌اکسید کربن، با فشاری حدود ۱٪ زمین",ds:"از دوران باستان؛ دو قمرش در ۱۸۷۷ کشف شد",mi:"وایکینگ، کیوریاسیتی، پرسویرنس و بالگرد اینجنیوتی"},
+{dk:139820,g:2.53,au:5.2,lt:"حدود ۴۳ دقیقه",at:"حدود ۹۰٪ هیدروژن و ۱۰٪ هلیوم",ds:"از دوران باستان؛ گالیله چهار قمر بزرگش را در ۱۶۱۰ دید",mi:"پایونیر، ویجر، گالیله، جونو"},
+{dk:116460,g:1.07,au:9.58,lt:"حدود ۱ ساعت و ۲۰ دقیقه",at:"هیدروژن و هلیوم",ds:"از دوران باستان؛ هویگنس حلقه‌ها را شناخت (۱۶۵۵)",mi:"ویجر، کاسینی–هویگنس (فرود روی تیتان)"},
+{dk:50724,g:.89,au:19.2,lt:"حدود ۲ ساعت و ۴۰ دقیقه",at:"هیدروژن، هلیوم و متان",ds:"ویلیام هرشل، ۱۷۸۱",mi:"فقط ویجر ۲ (۱۹۸۶) از نزدیک دیده است"},
+{dk:49244,g:1.14,au:30.1,lt:"حدود ۴ ساعت و ۱۰ دقیقه",at:"هیدروژن، هلیوم و متان",ds:"۱۸۴۶، با محاسبات لووریه و آدامز",mi:"فقط ویجر ۲ (۱۹۸۹)"}];
+function fa(n,d){return n.toLocaleString("fa-IR",{maximumFractionDigits:d||0})}
+function sts(x){return'<div class="stats"><div><b>×'+fa(x.dk/12742,2)+'</b><small>قطر نسبت به زمین</small></div><div><b>×'+fa(x.g,2)+'</b><small>گرانش نسبت به زمین</small></div><div><b>'+fa(x.au,2)+' AU</b><small>فاصله از خورشید (زمین = ۱)</small></div></div>'}
+var TL=[["1957","اسپوتنیک ۱","اولین ماهواره ساخت بشر"],["1961","یوری گاگارین","اولین انسان در فضا"],["1969","آپولو ۱۱","اولین گام‌های انسان روی ماه"],["1977","ویجر ۱ و ۲","پرتاب؛ امروز در فضای میان‌ستاره‌ای‌اند"],["1990","تلسکوپ هابل","تصاویری که شناخت ما از جهان را عوض کرد"],["1998","ایستگاه فضایی بین‌المللی","شروع ساخت؛ از ۲۰۰۰ همیشه سرنشین دارد"],["2012","کیوریاسیتی","فرود روی مریخ و شواهد محیط قابل زیست قدیمی"],["2015","نیوهورایزنز","اولین عبور از کنار پلوتون"],["2021","تلسکوپ جیمز وب","دیدن کهکشان‌های بسیار دور با فروسرخ"]];
+var DW=[["سرس","قطر حدود ۹۴۰ کیلومتر؛ بزرگ‌ترین جرم کمربند سیارک‌ها؛ در ۱۸۰۱ کشف شد و کاوشگر داون به آن رسید."],["پلوتون","قطر حدود ۲٬۳۷۷ کیلومتر؛ ۱۹۳۰ کشف شد؛ نیوهورایزنز در ۲۰۱۵ دشت قلب‌شکل یخی‌اش را دید."],["اریس","قطر حدود ۲٬۳۲۶ کیلومتر؛ ۲۰۰۵ کشف شد؛ کشفش بحث تعریف «سیاره» و تغییر وضعیت پلوتون را به راه انداخت."],["هاومیا","شکل تخم‌مرغی؛ هر حدود ۴ ساعت یک دور می‌چرخد؛ دو قمر و یک حلقه دارد."],["مکه‌مکه","قطر حدود ۱٬۴۰۰ کیلومتر؛ ۲۰۰۵ کشف شد؛ سطحی یخ‌زده و مایل به سرخ دارد."]];
+function more(){var h=document.getElementById("home"),o='<h2>مقایسه اندازه سیاره‌ها</h2><div>';
+P.forEach(function(p,i){o+='<div class="sz rv"><span>'+p.fa.split(" ")[0]+'</span><i style="--w:'+Math.max(2,X[i].dk/139820*100).toFixed(1)+'%;background:linear-gradient(90deg,'+p.c+',rgba(0,0,0,.5))"></i><small>'+fa(X[i].dk)+' km</small></div>'});
+o+='</div><h2>وزن تو روی سیاره‌ها</h2><div class="calc rv"><label>وزن خودت (کیلوگرم): <input id="wt" type="number" inputmode="decimal" min="1" max="400" value="70"></label><div class="stats" id="wr"></div></div><h2>تاریخچه اکتشافات فضایی</h2><div class="facts">';
+TL.forEach(function(t){o+='<div class="fact rv"><b dir="ltr" style="text-align:right">'+t[0]+'</b><strong>'+t[1]+'</strong><br><span>'+t[2]+'</span></div>'});
+o+='</div><h2>سیاره‌های کوتوله</h2><div class="facts">';
+DW.forEach(function(t){o+='<div class="fact rv"><b>'+t[0]+'</b><span>'+t[1]+'</span></div>'});
+o+='</div><h2>خورشید در یک نگاه</h2><div class="stats rv">';
+[["۴٫۶ میلیارد سال","سن خورشید"],["حدود ۵٬۵۰۰ °C","دمای سطح"],["حدود ۱۵ میلیون °C","دمای هسته"],["۱٫۳۹ میلیون km","قطر"],["۱۰۹ برابر زمین","قطر نسبت به زمین"],["۹۹٫۸۶٪","سهم از جرم منظومه"]].forEach(function(t){o+='<div><b>'+t[0]+'</b><small>'+t[1]+'</small></div>'});
+h.insertAdjacentHTML("beforeend",o+'</div>');
+var gl=[];P.forEach(function(p,i){gl.push([p.fa.split(" ")[0],X[i].g]);if(i==2)gl.push(["ماه",.165])});
+var wt=document.getElementById("wt"),wr=document.getElementById("wr");function rw(){var w=parseFloat(wt.value)||0;wr.innerHTML=gl.map(function(a){return'<div><b>'+fa(w*a[1],1)+'</b><small>'+a[0]+'</small></div>'}).join("")}wt.addEventListener("input",rw);rw();
+document.querySelectorAll("#home h2,.fact").forEach(function(e){e.classList.add("rv")});
+var rv=document.querySelectorAll(".rv");if(!window.IntersectionObserver){rv.forEach(function(e){e.classList.add("in")});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});rv.forEach(function(e){io.observe(e)})}
+F.push(["فصل‌ها","فصل‌های زمین از کج بودن محور ۲۳٫۵ درجه‌ای آن می‌آید، نه از فاصله‌اش تا خورشید."],["ماه","ماه همیشه یک روی خود را به زمین نشان می‌دهد، چون چرخشش با گردش دور زمین هماهنگ است."],["سرعت زمین","زمین با سرعتی حدود ۱۰۷٬۰۰۰ کیلومتر بر ساعت دور خورشید می‌چرخد."],["غول منظومه","جرم مشتری از مجموع جرم همه سیاره‌های دیگر حدود ۲٫۵ برابر بیشتر است."],["نزدیک‌ترین ستاره","بعد از خورشید، پروکسیما قنطورس است با حدود ۴٫۲ سال نوری فاصله."]);
+var g=document.getElementById("grid"),fc=document.getElementById("facts");
+P.forEach(function(p){g.insertAdjacentHTML("beforeend",'<a class="pc" style="--g:'+p.c+'66" href="#'+p.id+'"><div class="orb" style="background:radial-gradient(circle at 35% 30%,'+p.c+',#000 140%)"></div><b>'+p.fa+'</b><small>'+p.en+'</small></a>')});
+F.forEach(function(f){fc.insertAdjacentHTML("beforeend",'<div class="fact"><b>'+f[0]+'</b><span>'+f[1]+'</span></div>')});
+more();
+function fade(e){e.classList.remove("fade");void e.offsetWidth;e.classList.add("fade")}
+function show(){var id=location.hash.slice(1),i=P.findIndex(function(x){return x.id===id}),h=document.getElementById("home"),pg=document.getElementById("page");
+if(i<0){dTok++;h.hidden=false;pg.hidden=true;fade(h);document.title="Cosmic | سفر در منظومه شمسی";window.scrollTo(0,0);return}
+var p=P[i],x=X[i],pr=P[(i+7)%8],nx=P[(i+1)%8],rows=[["نوع",p.t],["قطر",p.d],["فاصله از خورشید",p.a],["طول روز",p.day],["طول سال",p.yr],["تعداد قمرها",p.m],["دما",p.tp],["گرانش سطح",p.g],["جو",x.at],["رسیدن نور خورشید",x.lt],["کشف",x.ds],["ماموریت‌های مهم",x.mi]],t="",f="";
+rows.forEach(function(r){t+="<tr><td>"+r[0]+"</td><td>"+r[1]+"</td></tr>"});p.f.forEach(function(x){f+="<li>"+x+"</li>"});
+pg.innerHTML='<div class="detail"><div><div id="big3d" class="b3" style="--g:'+p.c+'88">'+'</div></div><div><h1>'+p.fa+' <small dir="ltr" style="color:var(--mu);font-size:1rem">'+p.en+'</small></h1>'+sts(x)+'<table>'+t+'</table><b>چیزهای جالب</b><ul>'+f+'</ul><div class="nav"><a class="btn" href="#'+pr.id+'">→ '+pr.fa+'</a><a class="btn" href="#home">همه</a><a class="btn" href="#'+nx.id+'">'+nx.fa+' ←</a></div></div></div>';
+h.hidden=true;pg.hidden=false;fade(pg);detail3d(p);document.title=p.fa+" | Cosmic";window.scrollTo(0,0)}
+var RM=matchMedia("(prefers-reduced-motion:reduce)").matches,MOB=matchMedia("(max-width:760px)").matches||/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent),SEG=MOB?[36,28]:[64,48];
+function h3(x,y,z){var n=Math.sin(x*127.1+y*311.7+z*74.7)*43758.5453;return n-Math.floor(n)}
+function lr(p,q,t){return p+(q-p)*t}
+function vn(x,y,z){var xi=Math.floor(x),yi=Math.floor(y),zi=Math.floor(z),a=x-xi,b=y-yi,c=z-zi;a=a*a*(3-2*a);b=b*b*(3-2*b);c=c*c*(3-2*c);
+return lr(lr(lr(h3(xi,yi,zi),h3(xi+1,yi,zi),a),lr(h3(xi,yi+1,zi),h3(xi+1,yi+1,zi),a),b),lr(lr(h3(xi,yi,zi+1),h3(xi+1,yi,zi+1),a),lr(h3(xi,yi+1,zi+1),h3(xi+1,yi+1,zi+1),a),b),c)}
+function fbm(x,y,z,o){var s=0,a=.5;for(var i=0;i<o;i++){s+=a*vn(x,y,z);x*=2.03;y*=2.03;z*=2.03;a*=.5}return s*1.07}
+function mx(a,b,t){t=t<0?0:t>1?1:t;return[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t]}
+function sm(a,b,x){x=Math.max(0,Math.min(1,(x-a)/(b-a)));return x*x*(3-2*x)}
+function col(k,x,y,z,lon,lat){var c,n,w,b,pl,dx,dy,r;
+switch(k){
+case"mercury":n=fbm(x*4,y*4,z*4,5);w=vn(x*18,y*18,z*18);c=mx([70,66,62],[195,184,170],n*1.2+(w-.5)*.5);break;
+case"venus":w=fbm(x*2,y*4,z*2,4);b=fbm(x*1.5+w*2,y*5+w*3,z*1.5+w*2,5);c=mx([190,130,60],[250,228,170],b*1.3-.1);break;
+case"earth":n=fbm(x*2.2+3,y*2.2,z*2.2,6);
+if(n<.5){c=mx([6,25,70],[35,100,180],Math.pow(n/.5,3))}else{w=(n-.5)/.5;b=fbm(x*3+9,y*3,z*3,4);c=mx(mx([40,105,40],[160,135,85],b*1.5+w*.3-.25),[245,245,245],sm(.6,.95,w))}
+pl=sm(.82,.9,Math.abs(y)+vn(x*8,y*8,z*8)*.08);c=mx(c,[245,248,255],pl);break;
+case"mars":n=fbm(x*3,y*3,z*3,5);w=fbm(x*1.6+7,y*1.6,z*1.6,4);c=mx(mx([160,70,40],[222,142,92],n*1.3-.1),[75,40,30],sm(.52,.7,w));c=mx(c,[245,240,235],sm(.9,.95,Math.abs(y)));break;
+case"jupiter":w=fbm(x*3,y*1.2,z*3,4);b=Math.sin((y+w*.12)*17)*.5+.5+(fbm(x*5,y*28,z*5,3)-.5)*.7;c=mx([120,78,52],[238,218,184],b);dx=(lon-2.2)/.28;dy=(lat+.32)/.11;r=dx*dx+dy*dy;if(r<1.6)c=mx(c,[185,70,45],(1.6-r)*1.5);break;
+case"saturn":w=fbm(x*3,y*1.2,z*3,3);b=Math.sin((y+w*.08)*22)*.25+.5+(fbm(x*4,y*26,z*4,3)-.5)*.35;c=mx([176,148,96],[238,222,172],b);break;
+case"uranus":b=Math.sin(y*9)*.1+fbm(x*2,y*6,z*2,3)*.4;c=mx([100,185,195],[175,238,238],b+.3);break;
+case"neptune":w=fbm(x*3,y*1.5,z*3,4);b=Math.sin((y+w*.1)*12)*.2+.5;c=mx([25,50,160],[75,120,225],b);dx=(lon-3.5)/.3;dy=(lat+.35)/.12;if(dx*dx+dy*dy<1)c=mx(c,[15,25,95],.9);if(fbm(x*2,y*16,z*2,3)>.62)c=mx(c,[210,230,255],.5);break;
+case"sun":n=fbm(x*6,y*6,z*6,5);c=mx([255,100,10],[255,235,140],Math.pow(n,1.6)*2);break;
+case"cloud":n=fbm(x*3,y*3.4,z*3,5);return[255,255,255,sm(.5,.72,n)*210];
+default:c=[128,128,128]}
+return[c[0],c[1],c[2],255]}
+var TC={},dTok=0,AT={venus:["#ffcc77",2.2],earth:["#5aa8ff",2.6],mars:["#ff9966",1.2],jupiter:["#ffe0b0",.8],saturn:["#ffe9b8",.8],uranus:["#88ffff",1.6],neptune:["#5588ff",1.8]};
+function tex(k,W){var key=k+W;if(TC[key])return TC[key];var H=W/2,cv=document.createElement("canvas");cv.width=W;cv.height=H;var cx=cv.getContext("2d"),im=cx.createImageData(W,H),d=im.data,i,j,lat,lon,cl,p=0;
+for(j=0;j<H;j++){lat=(.5-(j+.5)/H)*Math.PI;for(i=0;i<W;i++){lon=(i+.5)/W*6.2832;cl=col(k,Math.cos(lat)*Math.cos(lon),Math.sin(lat),Math.cos(lat)*Math.sin(lon),lon,lat);d[p++]=cl[0];d[p++]=cl[1];d[p++]=cl[2];d[p++]=cl[3]}}
+cx.putImageData(im,0,0);var t=new THREE.CanvasTexture(cv);t.anisotropy=4;return TC[key]=t}
+function glow(R,c,pw){return new THREE.Mesh(new THREE.SphereGeometry(R*1.16,32,32),new THREE.ShaderMaterial({uniforms:{c:{value:new THREE.Color(c)}},vertexShader:"varying vec3 n;void main(){n=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}",fragmentShader:"varying vec3 n;uniform vec3 c;void main(){float i=pow(max(0.,.74-dot(n,vec3(0.,0.,1.))),2.5);gl_FragColor=vec4(c*i*"+pw.toFixed(2)+",i);}",side:THREE.BackSide,blending:THREE.AdditiveBlending,transparent:true,depthWrite:false}))}
+function ringTex(){if(TC.ring)return TC.ring;var cv=document.createElement("canvas");cv.width=256;cv.height=4;var x=cv.getContext("2d"),i,a,v;
+for(i=0;i<256;i++){a=i/256;v=a<.12?.18:a<.45?.85:a<.52?.04:a<.95?.65:0;v*=.65+.35*vn(i*.4,3,3)*1.4;x.fillStyle="rgba(228,208,162,"+Math.min(1,v)+")";x.fillRect(i,0,1,4)}
+return TC.ring=new THREE.CanvasTexture(cv)}
+function rings(R){var g=new THREE.RingGeometry(R*1.25,R*2.2,128),pa=g.attributes.position,uv=g.attributes.uv,v=new THREE.Vector3(),i;
+for(i=0;i<pa.count;i++){v.fromBufferAttribute(pa,i);uv.setXY(i,(v.length()-R*1.25)/(R*.95),.5)}
+var m=new THREE.Mesh(g,new THREE.MeshBasicMaterial({map:ringTex(),transparent:true,side:2,depthWrite:false}));m.rotation.x=Math.PI/2;return m}
+function mkPlanet(p,R,W){var g=new THREE.Group(),k=p.id,rock=(k=="mercury"||k=="mars"),m=new THREE.Mesh(new THREE.SphereGeometry(R,SEG[0],SEG[1]),new THREE.MeshStandardMaterial({map:tex(k,W),roughness:.95,metalness:0,bumpMap:rock?tex(k,W):null,bumpScale:.7}));g.add(m);g.m=m;
+if(k=="earth"){g.c=new THREE.Mesh(new THREE.SphereGeometry(R*1.012,SEG[0],SEG[1]),new THREE.MeshStandardMaterial({map:tex("cloud",W),transparent:true,depthWrite:false,roughness:1}));g.add(g.c)}
+if(AT[k])g.add(glow(R,AT[k][0],AT[k][1]));
+if(p.ring)g.add(rings(R));
+g.rotation.z=k=="uranus"?1.7:k=="saturn"?.47:k=="earth"?.4:0;return g}
+function detail3d(p){var el=document.getElementById("big3d");if(!el||typeof THREE==="undefined")return;var tok=++dTok;
+try{var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(38,1,.1,50),rn=new THREE.WebGLRenderer({antialias:true,alpha:true});rn.setPixelRatio(Math.min(devicePixelRatio,MOB?1.5:2));el.appendChild(rn.domElement);
+var w=el.clientWidth||280;rn.setSize(w,w,false);cam.position.set(0,p.ring?1.6:0,p.ring?10:5.4);cam.lookAt(0,0,0);
+var L=new THREE.DirectionalLight(0xffffff,1.7);L.position.set(-4,2,4);sc.add(L);sc.add(new THREE.AmbientLight(0x334466,.6));
+var g=mkPlanet(p,1.5,MOB?512:1024),dr=false,lx=0;sc.add(g);
+el.onpointerdown=function(e){dr=true;lx=e.clientX};el.onpointerup=el.onpointercancel=el.onpointerleave=function(){dr=false};el.onpointermove=function(e){if(dr){g.m.rotation.y+=(e.clientX-lx)*.01;lx=e.clientX}};
+var last=performance.now();(function loop(now){if(tok!==dTok){rn.dispose();rn.forceContextLoss();return}requestAnimationFrame(loop);var dt=Math.min(.05,(now-last)/1000)||0;last=now;if(!dr&&!RM)g.m.rotation.y+=dt*.18;if(g.c&&!RM)g.c.rotation.y+=dt*.25;rn.render(sc,cam)})()
+}catch(e){}}
+var TR;function thumb(p,ob){try{if(!TR){TR=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});TR.setSize(180,180)}var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(38,1,.1,50),L=new THREE.DirectionalLight(0xffffff,1.8),g=mkPlanet(p,1.5,MOB?256:512);L.position.set(-4,2,4);sc.add(L);sc.add(new THREE.AmbientLight(0x334466,.5));sc.add(g);g.m.rotation.y=p.id=="earth"?2.2:1;if(g.c)g.c.rotation.y=2.6;cam.position.set(0,p.ring?1.6:0,p.ring?10:5.4);cam.lookAt(0,0,0);TR.render(sc,cam);ob.style.background="url("+TR.domElement.toDataURL()+") center/contain no-repeat";ob.style.boxShadow="none";ob.style.borderRadius="0";ob.style.width="96px";ob.style.height="96px"}catch(e){}}
+function init(){var st=document.getElementById("stage");if(typeof THREE==="undefined"){st.style.display="none";return}
+try{var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(50,1,.1,1000),rn=new THREE.WebGLRenderer({antialias:true,alpha:true});
+st.appendChild(rn.domElement);rn.setPixelRatio(Math.min(devicePixelRatio,MOB?1.5:2));
+var sun=new THREE.Mesh(new THREE.SphereGeometry(7,64,48),new THREE.MeshBasicMaterial({map:tex("sun",MOB?256:512)}));sc.add(sun);sc.add(glow(7,"#ff9a2a",3));
+var gc=document.createElement("canvas");gc.width=gc.height=128;var gx=gc.getContext("2d"),gr=gx.createRadialGradient(64,64,0,64,64,64);gr.addColorStop(0,"rgba(255,200,100,.9)");gr.addColorStop(.35,"rgba(255,140,40,.25)");gr.addColorStop(1,"rgba(255,100,0,0)");gx.fillStyle=gr;gx.fillRect(0,0,128,128);
+var sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(gc),blending:THREE.AdditiveBlending,depthWrite:false,transparent:true}));sp.scale.set(55,55,1);sc.add(sp);
+sc.add(new THREE.PointLight(0xffffff,1.7,0,0));sc.add(new THREE.AmbientLight(0x3a4066,.8));
+var K=MOB?.8:1,B=MOB?1.9:1,ms=[],sz=[1,1.8,2,1.4,5,4.4,3,3],moon,mp=new THREE.Mesh(new THREE.SphereGeometry(.45,32,24),new THREE.MeshStandardMaterial({map:tex("mercury",256),roughness:1}));mp.scale.setScalar(B);sc.add(mp);
+var labs=[],mkl=function(t,h){var a=document.createElement(h?"a":"span");a.className="lab";a.textContent=t;if(h)a.href="#"+h;st.appendChild(a);return a};
+P.forEach(function(p,i){var R=(14+i*10.5)*K,s=sz[i]*.85*B,g=mkPlanet(p,s,MOB?256:512);sc.add(g);
+var o=new THREE.Mesh(new THREE.RingGeometry(R-.06,R+.06,128),new THREE.MeshBasicMaterial({color:0x5560a0,side:2,transparent:true,opacity:.35}));o.rotation.x=Math.PI/2;sc.add(o);
+ms.push({g:g,R:R,s:.9/Math.sqrt(R),a:i*1.3,r:s,l:mkl(p.fa,p.id),sp:.004+.012/(1+i*.7)});
+var ob=document.querySelectorAll(".orb")[i];if(ob)thumb(p,ob)});if(TR){TR.dispose();TR.forceContextLoss();TR=null}
+var sl=mkl("خورشید");var jm=[[1.5,.3,0xe8d27a,2.4],[1.85,.26,0xd9d3c4,1.7],[2.25,.38,0xa59a88,1.1],[2.7,.34,0x6e675f,.7]].map(function(a){var m=new THREE.Mesh(new THREE.SphereGeometry(a[1]*B,16,12),new THREE.MeshStandardMaterial({color:a[2],roughness:1}));sc.add(m);return{m:m,r:a[0],s:a[3]}});
+var bp=[],k;for(k=0;k<(MOB?800:1800);k++){var an=Math.random()*6.283,rd=(49+Math.random()*5)*K;bp.push(Math.cos(an)*rd,(Math.random()-.5)*1.4,Math.sin(an)*rd)}
+var bg=new THREE.BufferGeometry();bg.setAttribute("position",new THREE.Float32BufferAttribute(bp,3));var belt=new THREE.Points(bg,new THREE.PointsMaterial({color:0xb5aa9a,size:1.3,sizeAttenuation:false}));sc.add(belt);
+var pts=[],cl=[];for(k=0;k<(MOB?1100:2200);k++){var u=Math.random()*2-1,w=Math.random()*6.283,s2=Math.sqrt(1-u*u),d=300+Math.random()*200,b=.5+Math.random()*.5,t=Math.random();pts.push(s2*Math.cos(w)*d,u*d,s2*Math.sin(w)*d);cl.push(b*(t<.2?1:.85),b*.9,b*(t>.7?1:.8))}
+var gs=new THREE.BufferGeometry();gs.setAttribute("position",new THREE.Float32BufferAttribute(pts,3));gs.setAttribute("color",new THREE.Float32BufferAttribute(cl,3));sc.add(new THREE.Points(gs,new THREE.PointsMaterial({vertexColors:true,size:1.6,sizeAttenuation:false})));
+var yaw=0,pit=.6,dist=125,dr=false,lx=0,ly=0,W0=1,H0=1,T=0,rm=matchMedia("(prefers-reduced-motion:reduce)").matches,v=new THREE.Vector3();
+var VIS=true;if(window.IntersectionObserver)new IntersectionObserver(function(e){VIS=e[0].isIntersecting}).observe(st);
+function rs(){W0=st.clientWidth;H0=st.clientHeight;rn.setSize(W0,H0,false);var as=W0/H0;cam.fov=as<1?62:50;cam.aspect=as;cam.updateProjectionMatrix();pit=as<1?.9:.6;dist=(87.5*K*1.12)/(Math.tan(cam.fov*Math.PI/360)*Math.min(as,1.6))}if(window.ResizeObserver)new ResizeObserver(rs).observe(st);else addEventListener("resize",rs);rs();
+function lab(l,x,y,z){v.set(x,y,z).project(cam);l.style.display=v.z>1?"none":"block";l.style.transform="translate3d("+((v.x*.5+.5)*W0).toFixed(1)+"px,"+((-v.y*.5+.5)*H0).toFixed(1)+"px,0) translate(-50%,0)"}
+var last=performance.now();(function loop(now){requestAnimationFrame(loop);var dt=Math.min(.05,(now-last)/1000)||0;last=now;if(document.getElementById("home").hidden||!VIS)return;if(!rm){T+=dt;yaw+=dt*.084;sun.rotation.y+=dt*.12;sp.scale.setScalar(55+Math.sin(T*1.5)*3);belt.rotation.y+=dt*.024}
+ms.forEach(function(o){var a=o.a+T*o.s,x=Math.cos(a)*o.R,z=Math.sin(a)*o.R;o.g.position.set(x,0,z);o.g.m.rotation.y+=o.sp*(rm?0:dt*60);if(o.g.c)o.g.c.rotation.y+=o.sp*(rm?0:dt*78);lab(o.l,x,-o.r-1.2,z);if(o.R===35*K){var ma=T*1.8;mp.position.set(x+Math.cos(ma)*3.6*B,0,z+Math.sin(ma)*3.6*B)}});
+jm.forEach(function(o){var a=T*o.s,c=ms[4].g.position,q=ms[4].r;o.m.position.set(c.x+Math.cos(a)*o.r*q,0,c.z+Math.sin(a)*o.r*q)});lab(sl,0,-9,0);cam.position.set(Math.sin(yaw)*Math.cos(pit)*dist,Math.sin(pit)*dist,Math.cos(yaw)*Math.cos(pit)*dist);cam.lookAt(0,0,0);rn.render(sc,cam)})();
+}catch(e){st.style.display="none"}}
+window.addEventListener("hashchange",show);addEventListener("keydown",function(e){var i=P.findIndex(function(x){return x.id===location.hash.slice(1)});if(i<0)return;if(e.key=="ArrowLeft")location.hash=P[(i+1)%8].id;if(e.key=="ArrowRight")location.hash=P[(i+7)%8].id});show();setTimeout(init,30);
+</script>
+</body>
+</html>
